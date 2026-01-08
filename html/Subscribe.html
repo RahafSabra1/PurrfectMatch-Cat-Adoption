@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe Page</title>
+    <link rel="stylesheet" href="../CSS/layout.css">
+    <link rel="icon" type="image/png" href="../Images/logo icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/subscribe.css">
+</head>
+
+<body>
+    <header>
+        <h1>PurrfectMatch |</h1>
+        <nav>
+            <ul>
+                <li><a href="../html/index.html">Home Page</a></li>
+                <li><a href="../html/Cats.html">Cats Adopt</a></li>
+                <li><a href="../html/ContactUs.html">Contact US</a></li>
+                <li><a href="../html/Subscribe.html">Subscribe</a></li>
+                <li><a href="../html/AdoptionForm.html">Adoption Form</a></li>
+                <li><a href="../html/FAQ.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="one">
+        <img src="../Images/Logo main.png" alt="This photo shawn out lovely logo about our website">
+    </section>
+
+    <div>
+        <form action="https://sit.udst.edu.qa/processform.php" method="post" onsubmit="return finalValidation()">
+            <fieldset>
+                <input type="text" name="fullname" id="name" placeholder="Full Name" onchange="validateName()">
+                <span style="display: none; color: red;" id="nameError">Note: Please write your name</span>
+                <input type="text" name="username" id="username" placeholder="Username" onchange="validateUsername()">
+                <span style="display: none; color: red;" id="usernameError">Note: Please write your name</span>
+                <input type="password" name="password" minlength="8" maxlength="12" id="password"
+                    placeholder="Password...">
+                <span style="display: none; color: red;" id="passwordError">Note: Please write a password</span>
+                <input type="password" name="confirm_password" minlength="8" maxlength="12" id="confirm_password"
+                    placeholder="Confirm Password..." onchange="validatePassword()">
+                <span style="display: none; color: red;" id="confirmPasswordError">Note: Please confirm your
+                    password</span>
+                <input type="email" name="email" id="email" placeholder="Email" onchange="validateEmail()">
+                <span style="display: none; color: red;" id="emailError">Note: Please write your email</span>
+                <input type="email" name="confirm_email" id="confirm_email" placeholder="Confirm Email"
+                    onchange="validateConfirmEmail()">
+                <span style="display: none; color: red;" id="confirmEmailError">Note: Please confirm your email</span>
+                <input type="text" name="Phone_number" id="Phone_number" maxlength="12" value="+974"
+                    onblur="validatePhoneNumber()">
+                <span style="display: none; color: red;" id="phoneError">Note: Please write your
+                    Phone_number</span>
+                <input type="date" name="birth date" id="birth_date" min="1990-1-1" max="2006-1-1"
+                    placeholder="Birth date">
+                <span style="display: none; color: red;" id="agechooseerror">Note: Please choose your birth day</span>
+                <input type="number" id="age" name="age" placeholder="Age" min="18" max="100"
+                    onchange=" validateAgeMatch()">
+                <span style="display: none; color: red;" id="ageError">Note: Please write your age and must be
+                    the same as your date of birth</span>
+
+
+            </fieldset>
+            <fieldset>
+                <input type="number" name="building number" id="Building_number" placeholder="Building number"
+                    onchange="validateBuildingNumber()">
+                <span style="display: none; color: red;" id="buildingError">Note: Please write your Building
+                    number</span>
+                <input type="text" name="street name" id="street_name" placeholder="Street name"
+                    onchange="validateStreet()">
+                <span style="display: none; color: red;" id="streetError">Note: Please write your Street
+                    Number</span>
+
+                <label for="cities" style="color: white;">City</label>
+                <select name="cities" id="cities">
+                    <option value="Doha">Doha</option default>
+                    <option value="Al Khor">Al Khor</option>
+                    <option value="Al Kheesa">Al Kheesa</option>
+                    <option value="Leabaib">Leabaib</option>
+                    <option value="Lusail">Lusail</option>
+                </select>
+                <span style="display: none; color: red;" id="cityerror">Note: Please choose your city</span>
+
+                <div id="newsletter_box">
+                    <input type="checkbox" name="newsletter" id="newsletter">
+                    <p>subscribe to newsletter</p>
+                    <span style="display: none; color: red;" id="subserror">Note: Please click to subscribe </span>
+
+                </div>
+            </fieldset>
+
+            <div>
+                <input type="submit" value="Subscribe">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+
+    </div>
+
+
+    <footer>
+        <div>
+            <ul>
+                <li>
+                    <h3>Contact Information</h3>
+                </li>
+                <li><strong>Email</strong> PurrfectMatch@FakeMail.com</li>
+                <li><strong>Phone</strong> +974 44556677</li>
+                <li><a href="../html/ContactUs.html"
+                        style="font-weight: bold; border-bottom: 1px solid rgb(161, 62, 0); border-radius: 2px; color: rgb(161, 62, 0);;">Click
+                        Here</a> to Contact us</li>
+            </ul>
+        </div>
+        <div id="two">
+            <div>
+                <a href="https://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+                <a href="https://www.twitter.com" target="_blank" class="fa fa-twitter"></a>
+                <a href="https://www.instagram.com" target="_blank" class="fa fa-instagram"></a>
+                <a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin"></a>
+            </div>
+            <div>
+                <h1>PurrfectMatch</h1>
+                <P>Copyrights: All rights are reserved</P>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+
+        function validateConfirmEmail() {
+            const emailInput = document.getElementById("email").value.trim();
+            const confirmInputemail = document.getElementById("confirm_email").value.trim();
+
+            if (!emailInput || !confirmInputemail) { // to check if its null or not
+                alert("Please fill both email fields");
+                return false;
+            }
+
+            if (emailInput !== confirmInputemail) {
+                alert("Emails  do not match");
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateName() {
+            let name = document.getElementById("name").value.trim();;
+            let full_name = name.split(" ");
+
+            if (!isNaN(name) || full_name.length < 2) {
+                alert("Please Enter your Full name");
+                document.getElementById("name").value = "";
+                return false;
+            }
+            return true;
+        }
+
+        function validateBuildingNumber() {
+            let building = parseInt(document.getElementById("Building_number").value);
+
+            if (isNaN(building)) {
+                alert("Building number must be a number");
+                document.getElementById("Building_number").value = "";
+                return false;
+            }
+
+            return true;
+        }
+        function validatePassword() {
+            const passInput = document.getElementById("password").value.trim();
+            const confirmInput = document.getElementById("confirm_password").value.trim();
+
+            if (!passInput || !confirmInput) {
+                alert("Please fill both password fields");
+                return false;
+            }
+
+            if (passInput !== confirmInput) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            return true;
+        }
+
+        function validatePhoneNumber() {
+            let phone = document.getElementById("Phone_number").value.trim();
+            if (!phone.startsWith("+974")) {
+                alert("Phone number must start with +974");
+                return false;
+            }
+            let numberOnly = phone.slice(4); // (remove +974) the numnberonly here a string containing only digits. 
+            if (isNaN(numberOnly) || numberOnly.length !== 8) { // JavaScript converts string to number  internally → it's a valid number → returns false for isNan(numberOnly)
+                alert("Phone number must have 8 digits after +974");
+                return false;
+            }
+            return true;
+        }
+
+        function validateStreet() {
+            let element = document.getElementById("street_name").value.trim();
+            if (!element) {
+                alert("Please enter street name");
+                return false;
+            }
+            if (!isNaN(element)) {
+                alert("Street name cannot be only numbers");
+                document.getElementById("street_name").value = "";
+                return false;
+            }
+            return true;
+        }
+
+        function validateEmail() {
+            let email = document.getElementById("email").value.trim();
+            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailPattern.test(email)) {
+                alert("Invalid Email");
+                return false;
+            }
+            return true;
+        }
+
+        function validateAgeMatch() {
+            let dob = new Date(document.getElementById("birth_date").value);
+            let today = new Date();
+
+            let calculatedAge = today.getFullYear() - dob.getFullYear();
+            let enteredAge = parseInt(document.getElementById("age").value);
+
+            if (enteredAge !== calculatedAge) {
+                alert("Age does not match the Date of Birth!");
+                return false;
+            }
+            return true;
+        }
+
+        function finalValidation() {
+            if (!validateName()) return false;
+            if (!validateUsername()) return false;
+            if (!validatePassword()) return false;
+            if (!validateEmail()) return false;
+            if (!validateConfirmEmail()) return false;
+            if (!validatePhoneNumber()) return false;
+            if (!validateAgeMatch()) return false;
+            if (!validateStreet()) return false;
+            if (!validateBuildingNumber()) return false;
+            return true; // everything is valid
+        }
+        function validateUsername() {
+            let username = document.getElementById("username").value.trim();
+
+            if (username === "") {
+                alert("Username cannot be empty");
+                return false;
+            }
+            if (username.length < 3) {
+                alert("Username must be at least 3 characters long");
+                return false;
+            }
+            let usernamePattern = /^[a-zA-Z0-9_]+$/; // letters, numbers, underscores only
+            if (!usernamePattern.test(username)) {
+                alert("Username can only contain letters, numbers, and underscores");
+                return false;
+            }
+            return true; // valid
+        }
+
+        function showSpanOnEmpty(inputId, spanId) {
+            const input = document.getElementById(inputId);
+            const span = document.getElementById(spanId);
+            input.addEventListener("blur", function () {
+                if (input.value.trim() === "") {
+                    span.style.display = "block";
+                } else {
+                    span.style.display = "none";
+                }
+            });
+        }
+        //show the red error message if the user leaves it empty.”
+        showSpanOnEmpty("name", "nameError"); 
+        showSpanOnEmpty("username", "usernameError");
+        showSpanOnEmpty("password", "passwordError");
+        showSpanOnEmpty("confirm_password", "confirmPasswordError");
+        showSpanOnEmpty("email", "emailError");
+        showSpanOnEmpty("confirm_email", "confirmEmailError");
+        showSpanOnEmpty("Phone_number", "phoneError");
+        showSpanOnEmpty("street_name", "streetError");
+        showSpanOnEmpty("Building_number", "buildingError");
+        showSpanOnEmpty("age", "ageError");
+
+    </script>
+</body>
+
+</html>

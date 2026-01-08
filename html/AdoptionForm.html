@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Adoption Form</title>
+    <link rel="stylesheet" href="adoption.css">
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="stylesheet" href="../CSS/adoption.css">
+    <link rel="icon" type="image/png" href="../Images/logo icon.png">
+    <link rel="stylesheet" href="../CSS/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+
+<body>
+    <header>
+        <h1>PurrfectMatch |</h1>
+        <nav>
+            <ul>
+                <li><a href="../html/index.html">Home Page</a></li>
+                <li><a href="../html/Cats.html">Cats Adopt</a></li>
+                <li><a href="../html/ContactUs.html">Contact US</a></li>
+                <li><a href="../html/Subscribe.html">Subscribe</a></li>
+                <li><a href="../html/AdoptionForm.html">Adoption Form</a></li>
+                <li><a href="../html/FAQ.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="one">
+        <img src="../Images/Logo main.png" alt="This photo shawn out lovely logo about our website">
+    </section>
+    <div class="container">
+        <h2>Cat Adoption Form</h2>
+
+        <form id="adoptionForm">
+            <!-- Section 1: Personal Info -->
+            <div class="form-section" data-section="1">
+                <div class="form-group">
+                    <label>Full Name *</label>
+                    <input type="text" id="fullName">
+                    <span id="fullNameError" style="display:none; color:red;">Please enter your full name</span>
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" id="email">
+                    <span id="emailError" style="display:none; color:red;">Please enter your email</span>
+                </div>
+                <div class="form-group">
+                    <label>Phone *</label>
+                    <input type="tel" id="phone">
+                    <span id="phoneError" style="display:none; color:red;">Please enter your phone number</span>
+                </div>
+                <div class="form-group">
+                    <label>Address *</label>
+                    <textarea id="address"></textarea>
+                    <span id="addressError" style="display:none; color:red;">Please enter your address</span>
+                </div>
+                <button type="button" class="secondary" onclick="prevSection()">← Back</button>
+                <button type="button" class="primary" onclick="nextSection()">Next →</button>
+            </div>
+
+            <!-- Section 2: Home Info -->
+            <div class="form-section" data-section="2">
+                <div class="form-group">
+                    <label>Housing Type *</label>
+                    <select id="housing">
+                        <option value="">-- Select --</option>
+                        <option value="Apartment">Apartment</option>
+                        <option value="House">House</option>
+                        <option value="Villa">Villa</option>
+                    </select>
+                </div>
+                <span id="housingError" style="display:none; color:red;">Please enter your Housing Type</span>
+
+                <div class="form-group">
+                    <label>Do you have other pets? *</label>
+                    <select id="otherPets">
+                        <option value="">-- Select --</option>
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div>
+                <span id="otherPetsError" style="display:none; color:red;">Please enter a choice</span>
+
+                <div class="form-group">
+                    <label>Experience with cats *</label>
+                    <select id="experience">
+                        <option value="">-- Select --</option>
+                        <option value="First-time">First-time owner</option>
+                        <option value="Some">Some experience</option>
+                        <option value="Experienced">Experienced</option>
+                    </select>
+                </div>
+                <span id="experienceError" style="display:none; color:red;">Please enter your Experience</span>
+                <button type="button" class="secondary" onclick="prevSection()">← Back</button>
+                <button type="button" class="primary" onclick="nextSection()">Next →</button>
+            </div>
+
+            <!-- Section 3: Preferences -->
+            <div class="form-section" data-section="3">
+                <div class="form-group">
+                    <label>Preferred Age</label>
+                    <select id="agePreference">
+                        <option value="">-- Select --</option>
+                        <option value="Kitten">Kitten</option>
+                        <option value="Adult">Adult</option>
+                        <option value="Senior">Senior</option>
+                    </select>
+                </div>
+                <span id="PreferredAge" style="display:none; color:red;">Please enter your Preferred Age</span>
+                <div class="form-group">
+                    <label>Energy Level</label>
+                    <select id="energyLevel">
+                        <option value="">-- Select --</option>
+                        <option value="Calm">Calm</option>
+                        <option value="Playful">Playful</option>
+                        <option value="Very Active">Very Active</option>
+                    </select>
+                </div>
+                <span id="EnergyLevel" style="display:none; color:red;">Please enter your Energy Level</span>
+                <div class="form-group">
+                    <label>Additional Notes</label>
+                    <textarea id="additionalNotes"></textarea>
+                </div>
+                <button type="button" class="secondary" onclick="prevSection()">← Back</button>
+                <button type="button" class="primary" onclick="nextSection()">Review →</button>
+            </div>
+
+            <!-- Section 4: Summary -->
+            <div class="form-section" data-section="4">
+                <h3>Summary</h3>
+                <div class="summary-box" id="summaryBox"></div>
+                <button type="button" class="secondary" onclick="prevSection()">← Back</button>
+                <button type="submit" class="primary">Submit ✓</button>
+            </div>
+
+            <!--The last section-->
+            <div class="form-section" data-section="5">
+                <div class="success-message">
+                    <div class="success-icon">✓</div>
+                    <h2 style="color: white;">Application Submitted Successfully!</h2>
+                    <p>Thank you for your interest in adopting a cat from PurrfectMatch!</p>
+                    <p>Our team will review your application and contact you within 2-3 business days.</p>
+                    <p>We'll send you an email confirmation at <strong id="confirmEmail"></strong></p>
+                    <button type="button" class="btn btn-primary" onclick="location.reload()"
+                        style="margin-top: 30px;">Submit Another Application</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <footer>
+        <div>
+            <ul>
+                <li>
+                    <h3>Contact Information</h3>
+                </li>
+                <li><strong>Email</strong> PurrfectMatch@FakeMail.com</li>
+                <li><strong>Phone</strong> +974 44556677</li>
+                <li><a href="../html/ContactUs.html"
+                        style="font-weight: bold; border-bottom: 1px solid rgb(161, 62, 0); border-radius: 2px; color: rgb(161, 62, 0);;">Click
+                        Here</a> to Contact us</li>
+            </ul>
+        </div>
+        <div id="two">
+            <div>
+                <a href="https://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+                <a href="https://www.twitter.com" target="_blank" class="fa fa-twitter"></a>
+                <a href="https://www.instagram.com" target="_blank" class="fa fa-instagram"></a>
+                <a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin"></a>
+            </div>
+            <div>
+                <h1>PurrfectMatch</h1>
+                <P>Copyrights: All rights are reserved</P>
+            </div>
+        </div>
+    </footer>
+    <script>
+        let currentSection = 1;
+
+        function showSection(section) {
+            document.querySelectorAll('.form-section').forEach(sec => sec.classList.remove('active'));
+            document.querySelector(`[data-section="${section}"]`).classList.add('active');
+        }
+
+
+        function prevSection() {
+            if (currentSection > 1) {
+                currentSection--;
+                showSection(currentSection);
+            }
+        }
+
+        function generateSummary() {
+            const fullName = document.getElementById('fullName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const housing = document.getElementById('housing').value;
+            const otherPets = document.getElementById('otherPets').value;
+            const experience = document.getElementById('experience').value;
+            const age = document.getElementById('agePreference').value;
+            const energy = document.getElementById('energyLevel').value;
+            const notes = document.getElementById('additionalNotes').value;
+
+            document.getElementById('summaryBox').innerHTML = `
+                <p><strong>Name:</strong> ${fullName}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Phone:</strong> ${phone}</p>
+                <p><strong>Address:</strong> ${address}</p>
+                <p><strong>Housing:</strong> ${housing}</p>
+                <p><strong>Other Pets:</strong> ${otherPets}</p>
+                <p><strong>Experience:</strong> ${experience}</p>
+                <p><strong>Age Preference:</strong> ${age}</p>
+                <p><strong>Energy Level:</strong> ${energy}</p>
+                <p><strong>Notes:</strong> ${notes}</p>
+            `;
+        }
+
+
+        function showSpanOnEmpty(inputId, spanId) {
+            const input = document.getElementById(inputId);
+            const span = document.getElementById(spanId);
+
+            input.addEventListener("blur", function () {
+                if (input.value.trim() === "") {
+                    span.style.display = "block";
+                } else {
+                    span.style.display = "none";
+                }
+            });
+        }
+        // Section 1
+        showSpanOnEmpty("fullName", "fullNameError");
+        showSpanOnEmpty("email", "emailError");
+        showSpanOnEmpty("phone", "phoneError");
+        showSpanOnEmpty("address", "addressError");
+
+        // Section 2
+        showSpanOnEmpty("housing", "housingError");
+        showSpanOnEmpty("otherPets", "otherPetsError");
+        showSpanOnEmpty("experience", "experienceError");
+
+        showSpanOnEmpty("agePreference", "PreferredAge");
+        showSpanOnEmpty("energyLevel", "EnergyLevel");
+
+        showSection(currentSection);
+
+        function validateSection(section) { //checks if all mandatory fields in that section contain values.
+            let valid = true;
+
+            if (section === 1) {
+                if (!document.getElementById("fullName").value.trim()) valid = false;
+                if (!document.getElementById("email").value.trim()) valid = false;
+                if (!document.getElementById("phone").value.trim()) valid = false;
+                if (!document.getElementById("address").value.trim()) valid = false;
+            }
+
+            if (section === 2) {
+                if (!document.getElementById("housing").value) valid = false;
+                if (!document.getElementById("otherPets").value) valid = false;
+                if (!document.getElementById("experience").value) valid = false;
+            }
+
+            return valid;
+        }
+
+        function nextSection() {
+            if (!validateSection(currentSection)) {
+                alert("Please fill all required fields before moving to the next section.");
+                return;
+            }
+            if (currentSection < 4) {
+                currentSection++;
+                if (currentSection === 4) generateSummary();
+                showSection(currentSection);
+            }
+        }
+
+        document.getElementById('adoptionForm').addEventListener('submit', function (e) {
+            e.preventDefault();// e is the submit event here
+            // stops the browser’s default behavior—such as submitting a form or reloading 
+            // the page—so that you can control what happens instead using JavaScript.
+
+            // Fill the email in the confirmation
+            const email = document.getElementById('email').value;
+            document.getElementById('confirmEmail').innerText = email;
+
+            // Move to the success section
+            currentSection = 5;
+            showSection(currentSection);
+        });
+
+    </script>
+</body>
+
+</html>

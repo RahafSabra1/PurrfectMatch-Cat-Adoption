@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us page</title>
+    <link rel="stylesheet" href="../CSS/layout.css">
+    <link rel="icon" type="image/png" href="../Images/logo icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../CSS/contact.css">
+</head>
+
+<body>
+    <header>
+        <h1>PurrfectMatch |</h1>
+        <nav>
+            <ul>
+                <li><a href="../html/index.html">Home Page</a></li>
+                <li><a href="../html/Cats.html">Cats Adopt</a></li>
+                <li><a href="../html/ContactUs.html">Contact US</a></li>
+                <li><a href="../html/Subscribe.html">Subscribe</a></li>
+                <li><a href="../html/AdoptionForm.html">Adoption Form</a></li>
+                <li><a href="../html/FAQ.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="one">
+        <img src="../Images/Logo main.png" alt="This photo shawn out lovely logo about our website">
+    </section>
+
+
+    <main>
+        <div id="contact_box">
+            <div id="Information">
+                <h1>Contact Information</h1>
+
+                <b>Pet Vet Office:</b>
+                <address>24449 Arab League St, Doha</address>
+                <b>Email:</b>
+                <address>PurrfectMatch@FakeMail.com</address>
+                <b>Phone:</b>
+                <address>+974 44556677</address>
+                <!--An iframe is a small window inside your page that shows another website.-->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.317782903111!2d51.478500075679165!3d25.360663977606173!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e45dcfb2722e9e9%3A0xd1b07d34e11ee6d5!2sUniversity%20of%20Doha%20for%20Science%20and%20Technology!5e0!3m2!1sen!2sqa!4v1731762785800!5m2!1sen!2sqa"
+                    height="250" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <!--
+                    What do we mean by allowfullscreen? This allows the map to be opened in full screen when the user clicks the fullscreen button.
+                    what do we mean by loading and lazy? Do NOT load the map immediately + Load it only when the user scrolls to it
+                    what do we mean by referrerpolicy? Send the referrer ONLY if the website is safe (HTTPS → HTTPS)
+                    -->
+            </div>
+
+            <form action="https://sit.udst.edu.qa/processform.php" method="post" onsubmit="return validateForm()">
+
+                <fieldset>
+                    <legend style="margin-bottom: 45px; margin-top: 0px;">Contact us</legend>
+
+                    <input type="text" name="name" id="name" placeholder="Name.." onchange="validateName()">
+                    <span id="nameError" style="display:none; color:red;">Please enter your name</span>
+                    <textarea name="Message" id="Message" placeholder="Message" onchange="validateMessage()"></textarea>
+                    <span id="messageError" style="display:none; color:red;">Please write a message</span>
+                    <h3 style="font-weight: normal; margin-top: 10px; text-decoration: underline;">Contact Method</h3>
+                    <div id="contact_method">
+                        <div>
+                            <input type="radio" name="Phone" id="phone" value="Phone"
+                                onclick="changeinput('email_box','Phone_number')">
+                            <label for="phone">Phone Call</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="Phone" id="email" value="Email" checked
+                                onclick="changeinput('Phone_number','email_box')">
+                            <label for="email">Email</label>
+                        </div>
+
+                    </div>
+                    <input type="text" name="phone" id="Phone_number" value="+974" maxlength="12" style="display: none;"
+                        onclick="validatePhone()">
+                    <span id="phoneError" style="display:none; color:red;">Please enter a valid phone number</span>
+                    <input type="email" name="email" id="email_box" placeholder="Email.." onclick="validateEmail()">
+                    <span id="emailError" style="display:none; color:red;">Please enter your email</span>
+                    <input type="submit" value="Send" style="border-bottom: 4px solid rgb(161, 62, 0);">
+                    <input type="reset" value="Reset" style="border-bottom: 4px solid rgb(161, 62, 0);">
+
+                </fieldset>
+            </form>
+
+        </div>
+
+    </main>
+    <footer>
+        <div>
+            <ul>
+                <li>
+                    <h3>Contact Information</h3>
+                </li>
+                <li><strong>Email</strong> PurrfectMatch@FakeMail.com</li>
+                <li><strong>Phone</strong> +974 44556677</li>
+                <li><a href="../html/ContactUs.html"
+                        style="font-weight: bold; border-bottom: 1px solid rgb(161, 62, 0); border-radius: 2px; color: rgb(161, 62, 0);;">Click
+                        Here</a> to Contact us</li>
+            </ul>
+        </div>
+        <div id="two">
+            <div>
+                <a href="https://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+                <a href="https://www.twitter.com" target="_blank" class="fa fa-twitter"></a>
+                <a href="https://www.instagram.com" target="_blank" class="fa fa-instagram"></a>
+                <a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin"></a>
+            </div>
+            <div>
+                <h1>PurrfectMatch</h1>
+                <P>Copyrights: All rights are reserved</P>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function changeinput(hide_element, show_element) { // we sent he id here as parameters
+
+            let hide_el = document.getElementById(hide_element);
+            let show_el = document.getElementById(show_element);
+            show_el.style.display = "block"; // to show the element
+            hide_el.style.display = "none"; // to hidden the element
+
+        }
+
+        function validateName() {
+            let name = document.getElementById("name").value.trim();
+            let full_name = name.split(" ");
+
+            if (!isNaN(name) || full_name.length < 2) {
+                alert("Please Enter your Full name")
+                document.getElementById("name").value = "";
+                return false;
+            }
+            return true;
+        }
+
+        function validateMessage() {
+            let message = document.getElementById("Message").value.trim();
+            if (!message) {
+                alert("Please enter a message");
+                return false;
+            }
+
+            if (!isNaN(message)) {
+                alert("Message cannot be only numbers");
+                document.getElementById("Message").value = "";
+                return false;
+            }
+            return true;
+        }
+
+        function validatePhone() {
+            let phone = document.getElementById("Phone_number").value.trim();
+            if (!phone.startsWith("+974")) {
+                alert("Phone number must start with +974");
+                return false;
+            }
+            let numberOnly = phone.slice(4); // (remove +974) the numnberonly here a string containing only digits. 
+            if (isNaN(numberOnly) || numberOnly.length !== 8) { // JavaScript converts string to number  internally → it's a valid number → returns false for isNan(numberOnly)
+                alert("Phone number must have 8 digits after +974");
+                return false;
+            }
+            return true;
+        }
+
+        function validateEmail() {
+            let email = document.getElementById("email_box").value;
+            let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // s here is mean the sapce so ^\ means without space and @
+
+            if (!pattern.test(email)) {
+                alert("Invalid email format");
+                return false;
+            }
+            return true;
+        }
+
+        function validateForm() {
+            if (!validateName()) return false;
+            if (!validateMessage()) return false;
+
+            // Check which contact method is selected
+            let phoneRadio = document.getElementById("phone");
+            if (phoneRadio.checked) {
+                if (!validatePhone()) return false;
+            } else {
+                if (!validateEmail()) return false;
+            }
+
+            return true;
+        }
+
+        function showSpanOnEmpty(inputId, spanId) {
+            const input = document.getElementById(inputId);
+            const span = document.getElementById(spanId);
+            input.addEventListener("blur", function () {
+                if (input.value.trim() === "") {
+                    span.style.display = "block";
+                } else {
+                    span.style.display = "none";
+                }
+            });
+        }
+
+        showSpanOnEmpty("name", "nameError");
+        showSpanOnEmpty("Message", "messageError");
+        showSpanOnEmpty("Phone_number", "phoneError");
+        showSpanOnEmpty("email_box", "emailError");
+
+    </script>
+</body>
+
+</html>

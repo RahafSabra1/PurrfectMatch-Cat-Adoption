@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AvailableCats Advanced Page</title>
+    <link rel="stylesheet" href="../CSS/home.css">
+    <link rel="icon" type="image/png" href="../Images/logo icon.png">
+    <link rel="stylesheet" href="../CSS/layout.css">
+    <link rel="stylesheet" href="../CSS/FAQ.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>PurrfectMatch |</h1>
+        <nav>
+            <ul>
+                <li><a href="../html/index.html">Home Page</a></li>
+                <li><a href="../html/Cats.html">Cats Adopt</a></li>
+                <li><a href="../html/ContactUs.html">Contact US</a></li>
+                <li><a href="../html/Subscribe.html">Subscribe</a></li>
+                <li><a href="../html/AdoptionForm.html">Adoption Form</a></li>
+                <li><a href="../html/FAQ.html">FAQ</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section id="one">
+        <img src="../Images/Logo main.png" alt="This photo shawn out lovely logo about our website">
+    </section>
+
+    <main>
+        <h1 id="faq_title">Frequently Asked Questions</h1>
+
+        <div class="faq_container">
+            <p class="faq_intro">Have questions about adopting a cat? We've got answers! Click on any question below to
+                learn more.</p>
+
+            <div class="faq_item">
+                <button class="faq_question">How does the adoption process work?</button>
+                <div class="faq_answer">
+                    <p>You browse available cats, then fill out the adoption form. If approved, we schedule a meet and
+                        greet with the cat to ensure it's a perfect match for your home!</p>
+                </div>
+            </div>
+
+            <div class="faq_item">
+                <button class="faq_question">Is adoption free?</button>
+                <div class="faq_answer">
+                    <p>Yes! Adoption is completely free and includes one free vet visit to help your new companion start
+                        their life with you in the best health.</p>
+                </div>
+            </div>
+
+            <div class="faq_item">
+                <button class="faq_question">Are the cats vaccinated?</button>
+                <div class="faq_answer">
+                    <p>All cats listed on PurrfectMatch are fully vaccinated and healthy. We ensure every cat receives
+                        proper medical care before adoption.</p>
+                </div>
+            </div>
+
+            <div class="faq_item">
+                <button class="faq_question">Can I adopt if I already have pets?</button>
+                <div class="faq_answer">
+                    <p>Yes! We ensure the cat fits your home environment and gets along with your other pets. We'll
+                        discuss your current pets during the application process.</p>
+                </div>
+            </div>
+
+            <div class="faq_item">
+                <button class="faq_question">How long does approval take?</button>
+                <div class="faq_answer">
+                    <p>The review and approval process normally takes 24–48 hours. We'll contact you as soon as we've
+                        reviewed your application!</p>
+                </div>
+            </div>
+
+            <div class="faq_item">
+                <button class="faq_question">What if I have more questions?</button>
+                <div class="faq_answer">
+                    <p>Feel free to contact us anytime! You can reach us at PurrfectMatch@FakeMail.com or call +974
+                        44556677. We're here to help!</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <ul>
+                <li>
+                    <h3>Contact Information</h3>
+                </li>
+                <li><strong>Email</strong> PurrfectMatch@FakeMail.com</li>
+                <li><strong>Phone</strong> +974 44556677</li>
+                <li><a href="../html/ContactUs.html"
+                        style="font-weight: bold; border-bottom: 1px solid rgb(161, 62, 0); border-radius: 2px; color: rgb(161, 62, 0);">Click
+                        Here</a> to Contact us</li>
+            </ul>
+        </div>
+
+        <div id="two">
+            <div>
+                <a href="https://www.facebook.com" target="_blank" class="fa fa-facebook"></a>
+                <a href="https://www.twitter.com" target="_blank" class="fa fa-twitter"></a>
+                <a href="https://www.instagram.com" target="_blank" class="fa fa-instagram"></a>
+                <a href="https://www.linkedin.com" target="_blank" class="fa fa-linkedin"></a>
+            </div>
+            <div>
+                <h1>PurrfectMatch</h1>
+                <p>Copyrights: All rights are reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        let questions = document.querySelectorAll(".faq_question"); // find all the element from calss fag queston and store them in a list
+
+        //  then i do loop inside the elements of the list up
+        // q is the current ques
+        questions.forEach(q => {
+            // when the ques is on click what inside the func will be RUN
+            q.addEventListener("click", () => {
+                let answer = q.nextElementSibling; // find the next element which it the answer
+
+                q.classList.toggle("active");// to change from + to -
+
+                // loops inside the whole answer i have up
+                document.querySelectorAll(".faq_answer").forEach(a => { // a the current asnwer
+                    if (a !== answer) {
+                        a.style.display = "none";
+                        //If it's not the current answer, hide it and remove "active" from its question
+                        a.previousElementSibling.classList.remove("active");
+                    }
+                });
+
+                if (answer.style.display === "block") {
+                    // the current clicked answer we have if its block hide it and if its hode show it
+                    answer.style.display = "none";
+                } else {
+                    answer.style.display = "block";
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>

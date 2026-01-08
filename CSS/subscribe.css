@@ -1,0 +1,67 @@
+
+
+form{
+    width: 100%;
+    margin: 5% auto;
+    background-color:  rgba(255, 248, 229, 0.71);
+}
+
+
+label{
+    text-align: center;
+    font-size: 1.5rem;
+    border-bottom: rgb(247, 140, 73) 3px solid;
+    background-color:rgb(247, 140, 73);
+    color: rgba(255, 248, 229, 0.71);
+    padding: 5px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+select{
+    height: 50px;
+    font-size: 1rem;
+}
+
+#newsletter_box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+input{
+    margin: 15px 0;
+    font-size: 1rem;
+    border: none;
+    border-bottom: rgb(247, 140, 73) 3px solid;
+    border-left: rgb(247, 140, 73) 3px solid;
+    height: 50px;
+    padding: 10px;
+    /* border-radius: 10px; */
+    border-radius: 0 0 15px;
+    
+}
+fieldset{
+    display: flex;
+    margin-top: 10px;
+    flex-direction: column;
+    border: rgb(247, 140, 73) 3px solid;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+
+input[type=submit],input[type=reset]{
+    align-self: center;
+    font-size: 1.2rem;
+    background-color:rgb(247, 140, 73);
+    color: #f1efef;
+    border-radius: 0 0 15px;
+    height: 50px;
+    width: 100px;
+    transition: ease-in-out 0.3s;
+
+}
+input[type=submit]:hover , input[type=reset]:hover{
+    
+    background-color: rgba(255, 248, 229, 0.71);
+    color: black
+}

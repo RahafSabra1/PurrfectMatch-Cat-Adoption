@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    margin: 20px auto;
+    border: 2px solid rgb(247, 140, 73);
+    background: rgba(255, 248, 229, 0.71);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    color: white;
+    background-color: rgb(255, 147, 80);
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 15px;
+    border-radius: 10px;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 20px;
+    border-bottom: 5px solid rgb(161, 62, 0);
+
+}
+
+.form-section {
+    display: none;
+}
+
+.form-section.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.primary {
+    background: #fc6b11;
+    color: white;
+}
+
+button.secondary {
+    background: white;
+    color: #fc6b11;
+}
+
+.summary-box {
+    background: #fff2e0;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.summary-item {
+    margin-bottom: 10px;
+}
+
+#adoptionForm {
+    background: rgb(255, 231, 216);
+    padding: 20px 40px;
+    border-radius: 10px;
+    border: 2px solid rgb(247, 140, 73);
+}
+
+.success-message {
+    text-align: center;
+    padding: 40px;
+}
+
+.success-icon {
+    font-size: 5rem;
+    color: rgb(76, 175, 80);
+    margin-bottom: 20px;
+}
+
+.success-message h2 {
+    color: rgb(247, 140, 73);
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.success-message p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.btn {
+    padding: 15px 35px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+}
+
+.btn-primary {
+    background: rgb(255, 147, 80);
+    color: white;
+}
+
+.btn-primary:hover {
+    background: rgb(235, 127, 60);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 147, 80, 0.4);
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.btn-secondary:hover {
+    background: #e0e0e0;
+}
