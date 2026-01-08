@@ -3,7 +3,8 @@ A beautiful cat adoption website built with HTML, CSS, and JavaScript
 
 📋 Project Overview
 PurrfectMatch is a beautiful and user-friendly cat adoption website designed to connect loving adopters with cats in need of forever homes. This project showcases a complete multi-page website with modern design, interactive features, and responsive layouts.
-✨ Features
+
+✨ Features: 
 🏠 Home Page
 
 Welcome section with mission statement
@@ -50,7 +51,11 @@ Easy-to-navigate interface
 🛠️ Technologies Used
 
 HTML5 - Semantic markup and structure
+
 CSS3 - Modern styling, animations, and grid layouts
+
 JavaScript - Form validation and interactive features
+
 Font Awesome - Social media icons
+
 Google Maps API - Embedded location map
